@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+    background: #fafafa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background: #333;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+main {
+    padding: 20px;
+}
