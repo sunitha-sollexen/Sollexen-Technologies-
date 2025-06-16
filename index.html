@@ -6,7 +6,7 @@
   <title>Your Company</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
-  <style>
+    <style>
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: flex-end;
     background-color: #111;
-    padding: 20px;
+    padding: 20px 40px;
     gap: 30px;
     font-size: 16px;
     position: sticky;
@@ -38,63 +38,76 @@
 
   header {
     text-align: center;
-    padding: 40px 20px;
-    font-size: 28px;
+    padding: 50px 20px;
+    font-size: 32px;
     font-weight: bold;
     color: #00ffd5;
+    background-color: #111;
+    letter-spacing: 1px;
   }
 
   section {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 40px 20px;
+    justify-content: center;
+    padding: 80px 60px;
     gap: 40px;
     flex-wrap: wrap;
+  }
+
+  section:nth-child(even) {
+    flex-direction: row-reverse;
+    background-color: #0d0d0d;
+  }
+
+  section:nth-child(odd) {
+    flex-direction: row;
+    background-color: #1a1a1a;
+  }
+
+  section .text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  section h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #00ffd5;
+  }
+
+  section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
   }
 
   section img {
     max-width: 400px;
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  }
-
-  section .text {
-    flex: 1;
-    min-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
   }
 
   section#home,
   section#staffing,
   section#skills,
   section#vacancy {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #00ffd5;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.6;
+    background-color: black;
   }
 
   footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     font-size: 14px;
-    color: #aaa;
+    color: #888;
     border-top: 1px solid #333;
-    margin-top: 40px;
+    background-color: #0d0d0d;
   }
-  </style>
+</style>
 </head>
 <body>
 
