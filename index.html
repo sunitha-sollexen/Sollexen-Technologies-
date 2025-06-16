@@ -29,18 +29,22 @@ header {
   box-shadow: 0 2px 5px rgba(255,255,255,0.1);
   z-index: 1000;
   color: #eee;
+  gap: 40px; /* spacing between motto and nav */
 }
 
 .motto {
-  flex-grow: 1;
-  text-align: center;
+  text-align: left;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
+  color: #3daee9; 
 }
 
 nav {
+  margin-left: auto;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -65,10 +69,11 @@ main {
 section {
   display: flex;
   align-items: center;
-  padding: 60px 20px;
-  gap: 40px; /* more gap for breathing room */
+  padding: 60px 40px;
+  gap: 30px; /* more gap for breathing room */
   border-bottom: 1px solid #333;
-  flex-wrap: wrap; /* wrap on small screens */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Odd sections: dark bg, light text */
@@ -87,9 +92,9 @@ section:nth-child(even) {
 
 section .text {
   flex: 1;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  min-width: 280px; /* ensure minimum width for text */
+  max-width: 500px;
+  font-size: 1.1 rem;
+  line-height: 1.6;
 }
 
 section:nth-child(even) .text {
@@ -97,13 +102,14 @@ section:nth-child(even) .text {
 }
 
 section img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 3/2;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   flex-shrink: 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Slight zoom effect on hover */
@@ -138,6 +144,16 @@ footer {
     display: none; /* hide nav on small screens */
   }
 }
+      .centered-home {
+  flex-direction: column !important;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+.centered-home .text {
+  max-width: 600px;
+}
 </style>
 </head>
 <body>
@@ -155,13 +171,13 @@ footer {
 </header>
 
 <main>
-  <section id="home">
-    <div class="text">
-      <h2>Welcome to Our Company</h2>
-      <p>Your trusted partner in delivering excellence</p>
-    </div>
-  </section>
-
+<section id="home" class="centered-home">
+  <div class="text">
+    <h2>Welcome to Our Company</h2>
+    <p>This is the Home section. Brief introduction or welcome message goes here.</p>
+  </div>
+</section>
+  
   <section id="about">
     <div class="text">
       <h2>About Us</h2>
