@@ -1,21 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home - Company</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Company</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    body, html {
+      margin: 0; padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #121212;
+      color: #eee;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background-color: #1e1e1e;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+      z-index: 1000;
+      color: #eee;
+    }
+    .motto {
+      flex-grow: 1;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    nav {
+      flex-shrink: 0;
+    }
+    nav a {
+      margin-left: 20px;
+      color: #3daee9;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding-top: 80px; /* space for fixed header */
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section {
+      display: flex;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 30px;
+      border-bottom: 1px solid #333;
+    }
+    /* Odd sections: dark bg, light text */
+    section:nth-child(odd) {
+      background-color: #121212;
+      color: #eee;
+      flex-direction: row;
+    }
+    /* Even sections: light bg, dark text */
+    section:nth-child(even) {
+      background-color: #f5f5f5;
+      color: #111;
+      flex-direction: row-reverse;
+    }
+    section .text {
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    /* Adjust text color inside even sections */
+    section:nth-child(even) .text {
+      color: #111;
+    }
+    section img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 0.9rem;
+      background-color: #1e1e1e;
+      margin-top: 40px;
+    }
+    /* Responsive */
+    @media(max-width: 768px) {
+      section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      section img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+      nav {
+        display: none; /* hide nav on small screens */
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="clients.html">Clients</a>
-        <a href="jobs.html">Job Vacancy</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <main>
-        <h1>Welcome to Our Company</h1>
-        <p>Your success is our mission.</p>
-    </main>
+
+<header>
+  <div class="motto">Your Company Motto Here</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#staffing">Staffing</a>
+    <a href="#skills">Technical Skills</a>
+    <a href="#clients">Clients</a>
+    <a href="#vacancy">Vacancy</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <div class="text">
+      <h2>Welcome to Our Company</h2>
+      <p>This is the Home section. Brief introduction or welcome message goes here.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Home+Image" alt="Home Image" />
+  </section>
+
+  <section id="about">
+    <div class="text">
+      <h2>About Us</h2>
+      <p>Here you can write a little about the company background, vision, and values.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=About+Image" alt="About Image" />
+  </section>
+
+  <section id="staffing">
+    <div class="text">
+      <h2>Staffing</h2>
+      <p>Information about your staffing approach, team, or hiring philosophy.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Staffing+Image" alt="Staffing Image" />
+  </section>
+
+  <section id="skills">
+    <div class="text">
+      <h2>Technical Skills</h2>
+      <p>Highlight the key technical skills or expertise your company has.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Skills+Image" alt="Skills Image" />
+  </section>
+
+  <section id="clients">
+    <div class="text">
+      <h2>Clients</h2>
+      <p>Showcase your important clients or testimonials.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Clients+Image" alt="Clients Image" />
+  </section>
+
+  <section id="vacancy">
+    <div class="text">
+      <h2>Job Vacancy</h2>
+      <p>List open positions or invite interested candidates to contact you.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Vacancy+Image" alt="Vacancy Image" />
+  </section>
+</main>
+
+<footer>
+  &copy; All rights reserved.
+</footer>
+
 </body>
 </html>
