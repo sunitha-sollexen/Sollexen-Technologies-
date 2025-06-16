@@ -7,85 +7,137 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
     <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-  }
+  /* Reset and base */
+body, html {
+  margin: 0; 
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #121212;
+  color: #eee;
+}
 
-  header {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 28px;
-    font-weight: bold;
-  }
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background-color: #1e1e1e;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+  z-index: 1000;
+  color: #eee;
+}
 
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background-color: #111;
-    padding: 15px;
-  }
+.motto {
+  flex-grow: 1;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
+nav {
+  flex-shrink: 0;
+}
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+nav a {
+  margin-left: 20px;
+  color: #3daee9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding-top: 80px; /* space for fixed header */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 40px; /* more gap for breathing room */
+  border-bottom: 1px solid #333;
+  flex-wrap: wrap; /* wrap on small screens */
+}
+
+/* Odd sections: dark bg, light text */
+section:nth-child(odd) {
+  background-color: #121212;
+  color: #eee;
+  flex-direction: row;
+}
+
+/* Even sections: light bg, dark text */
+section:nth-child(even) {
+  background-color: #f5f5f5;
+  color: #111;
+  flex-direction: row-reverse;
+}
+
+section .text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  min-width: 280px; /* ensure minimum width for text */
+}
+
+section:nth-child(even) .text {
+  color: #111;
+}
+
+section img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom effect on hover */
+section img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+  background-color: #1e1e1e;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
   section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 20px;
-    gap: 40px;
-  }
-
-  section .text {
-    flex: 1;
-    min-width: 250px;
+    flex-direction: column !important;
+    text-align: center;
+    padding: 40px 15px;
   }
 
   section img {
     width: 100%;
-    max-width: 400px;
     height: auto;
-    border-radius: 8px;
+    margin-top: 20px;
   }
 
-  section#home,
-  section#staffing,
-  section#skills,
-  section#vacancy {
-    flex-direction: column;
-    text-align: center;
+  nav {
+    display: none; /* hide nav on small screens */
   }
-
-  footer {
-    text-align: center;
-    padding: 30px 10px;
-    font-size: 14px;
-    color: #bbb;
-    border-top: 1px solid #333;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-    
+}
 </style>
 </head>
 <body>
